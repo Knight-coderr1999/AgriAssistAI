@@ -1,3 +1,54 @@
+# AgriAssist AI — Agentic Advisory for Indian Farmers
+
+Short: AgriAssist AI is a multilingual, hybrid online/offline agentic advisory system for smallholder farmers (voice-first, RAG-grounded, HITL + XAI).
+
+## Key Challenges in Indian Agriculture & AgriAssist AI Solutions
+
+| Specific Challenge | Corresponding AgriAssist AI Solution Feature |
+|--------------------|----------------------------------------------|
+| Climate Change & Variability | Dynamic, goal-driven Crop Health & Soil Agents adapting to real-time weather and crop conditions |
+| Low Productivity & Inefficient Practices | Precision agriculture recommendations (VRT, optimal planting) from Crop & Soil Agents |
+| Insect & Disease Infestations | AI-driven pest surveillance and targeted intervention advice from Crop Health Agent |
+| Limited Land Holdings & Diverse Soil Types | Context-aware, localized advice from Soil & Water Management Agent; fine-tuning on regional data |
+| Market Price Instability & Weak Infrastructure | Real-time market & financial insights from Market Agent; hybrid online-offline architecture |
+| Post-Harvest Losses | Predictive analytics for optimal harvest/sale timing from Market Agent |
+| Low Digital Literacy | Voice-first, intuitive Multilingual Voice Interface |
+| Language Barriers & Code-Switching | Multilingual ASR/TTS, fine-tuned LLMs on synthetic Indian language datasets, code-switching handling |
+| Unreliable Internet Connectivity | Hybrid online-offline architecture with on-device LLM inference and local data caching |
+| Lack of Timely & Accurate Information | Comprehensive data integration, RAG-grounded LLMs, continuous knowledge updates |
+| Farmer Unwillingness & Trust Deficit | Human-in-the-Loop (HITL) validation, Explainable AI (XAI) for transparency |
+| High Implementation Costs & Affordability | Leveraging open-source frameworks, lightweight on-device models, and cost-efficient offline operation |
+
+---
+
+## Core Data Sources for AgriAssist AI
+
+| Data Category | Key Data Sources | Type of Data | Access Method/Format |
+|---------------|------------------|--------------|----------------------|
+| Weather | Indian Meteorological Department (IMD), data.gov.in, IMDLIB | Gridded rainfall, temperature series, cyclone frequency, historical & real-time weather data | API, Downloadable CSV/NetCDF/GeoTIFF, Python Library |
+| Crop & Yield | UPAg (Unified Portal for Agricultural Statistics), DES, IFPRI | Production estimates (foodgrain, rice, wheat, etc.), area, yield, climate impact on yields | Downloadable Reports/PDFs, Dataverse (IFPRI), Website Statistics |
+| Soil Health | Soil Health Card Portal, NRSC (Bhuvan-Indian Soil datasets) | Soil testing results, nutrient analysis, soil properties (depth, texture, carbon maps) | Website Dashboards, Downloadable Maps/Data |
+| Pest & Disease | ICAR-CRIDA Crop-Pest-Disease-Weather Database, Kaggle, NCIPM | Weekly pest records, disease information, pest images, IPM packages | Downloadable Excel/PDF, Image Datasets, Website Information |
+| Finance & Policy | UPAg, DES, IFPRI | Market trends, pricing (MSP, farm harvest prices), cost of cultivation, agricultural wages, economic indicators, household consumption | Downloadable Reports/PDFs, Dataverse (IFPRI), Website Statistics |
+| Multilingual Text | Vikaspedia (Govt of India) | Agriculture-specific documents for synthetic QA pair generation | Web Scraping, LLM-generated datasets |
+
+## Quick links
+- Initial synopsis: `docs/synopsis_initial.pdf`
+- Final synopsis: `docs/synopsis_final.pdf`
+- Demo video: `demo/demo_recording.mp4` (or link)
+
+## Install (dev)
+```bash
+git clone <repo>
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+
+
+// frontend readme
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
