@@ -62,3 +62,37 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+
+
+
+
+
+
+// For to run Frontend
+
+First, make sure you have Node.js and Git installed on your computer.
+
+Step 1: Clone the Repository
+This command downloads a copy of your project from GitHub to your computer.
+Open your terminal.
+Navigate to the folder where you want to store the project (like your Deskop).
+Run the following command:
+
+git clone https://github.com/Knight-coderr1999/AgriAssistAI.git
+
+Step 2: Go into the Project Folder
+After the download is complete, you need to move into the project's directory.
+
+cd AgriAssistAI
+
+Step 3: Install Dependencies
+This command reads the package.json file and installs all the necessary packages (like React, Tailwind CSS, etc.) that your project needs to run.
+
+npm install
+
+Step 4: Run the Application
+This is the final step. It starts the local development server.
+
+npm run dev
+
+Your terminal will show you a local URL, which is usually http://localhost:5173. Open this link in your web browser, and you will see your running application.
