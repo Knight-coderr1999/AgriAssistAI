@@ -738,7 +738,7 @@ export default function App() {
     const [activePage, setActivePage] = useState('dashboard');
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [loggedInUser, setLoggedInUser] = useState(null); // null or user object { role: 'user'/'admin' }
-    const [users, setUsers] = useState([]); // Mock user database
+    const [users, setUsers] = useState([{'email': 'user@example.com', 'role': 'user', 'password': 'password123'}]); // Mock user database
     const [notifications, setNotifications] = useState(initialNotifications);
 
     const unreadCount = notifications.filter(n => !n.read).length;
