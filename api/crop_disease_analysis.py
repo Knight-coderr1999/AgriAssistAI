@@ -12,7 +12,7 @@ sys.path.append('..')
 from market_scrapper import MarketDataScraper
 
 # sys.path.append(os.path.join(os.path.dirname(__file__), '../../vectorstores'))
-from vectorstores.gov_rag_system import GovernmentRAGSystem
+from api.rag_engine import RAGEngine
 
 app = Flask(__name__)
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 market_scraper = MarketDataScraper()
 
 # Initialize RAG system for government schemes
-rag_system = GovernmentRAGSystem()
+rag_system = RAGEngine()
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'mp4', 'avi', 'mov', 'mkv'}

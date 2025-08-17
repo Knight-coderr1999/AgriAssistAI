@@ -16,7 +16,7 @@ class DocumentSource:
         self.last_updated = last_updated or datetime.now().isoformat()
         self.id = hash(url + title)
 
-class GovernmentRAGSystem:
+class RAGEngine:
     """RAG system for government agricultural data retrieval"""
     
     def __init__(self):

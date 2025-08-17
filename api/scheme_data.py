@@ -5,7 +5,7 @@ from typing import List, Dict
 import logging
 import os
 from dotenv import load_dotenv
-from vectorstores.gov_rag_system import DocumentSource, GovernmentRAGSystem
+from api.rag_engine import DocumentSource, RAGEngine
 
 load_dotenv()
 
@@ -14,7 +14,7 @@ app = Flask(__name__)
 CORS(app)
 logger = logging.getLogger(__name__)
 
-rag_system = GovernmentRAGSystem()
+rag_system = RAGEngine()
 
 # Simulated source list and mock scheme data
 @app.route('/api/rag/search', methods=['POST'])

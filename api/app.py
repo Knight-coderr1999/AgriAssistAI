@@ -27,10 +27,10 @@ except ImportError as e:
     MarketDataScraper = None
 
 try:
-    from vectorstores.gov_rag_system import GovernmentRAGSystem
+    from api.rag_engine import RAGEngine
 except ImportError as e:
     print(f"Warning: Could not import GovernmentRAGSystem: {e}")
-    GovernmentRAGSystem = None
+    RAGEngine = None
 
 try:
     from weather_service import WeatherService
@@ -273,8 +273,8 @@ def get_govt_schemes():
         return jsonify({'error': 'Missing required query parameter: query'}), 400
         
     try:
-        if GovernmentRAGSystem:
-            rag_system = GovernmentRAGSystem()
+        if RAGEngine:
+            rag_system = RAGEngine()
             schemes = rag_system.search_schemes(query)
             db_manager.store_govt_schemes(query, schemes)
             return jsonify({'schemes': schemes})
