@@ -93,7 +93,4 @@ Our vision for AgriAssist AI extends beyond this initial implementation:
   * **Voice-First Interface:** A key part of our vision is to fully implement a seamless voice-first interface, making the app even more accessible to users with low digital literacy.
 
 -----
-
-**Initial Synopsis:** [`docs/synopsis_initial.pdf`](https://www.google.com/search?q=docs/synopsis_initial.pdf)
-**Final Synopsis:** [`docs/synopsis_final.pdf`](https://www.google.com/search?q=docs/synopsis_final.pdf)
-**Demo Video:** [`demo/demo_recording.mp4`](https://www.google.com/search?q=demo/demo_recording.mp4)
+**Demo Video:** [`Video Demo`](https://www.youtube.com/watch?v=ly07WZjk010)
