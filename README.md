@@ -1,95 +1,99 @@
-# AgriAssist AI — Agentic Advisory for Indian Farmers
 
-Short: AgriAssist AI is a multilingual, hybrid online/offline agentic advisory system for smallholder farmers (voice-first, RAG-grounded, HITL + XAI).
+-----
 
-// frontend readme
+# AgriAssist AI: Agentic Advisory for Indian Farmers 🧑‍🌾
 
-# React + Vite
+## Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AgriAssist AI is a multilingual, agentic advisory system built to empower smallholder farmers in India. Our solution addresses the core challenges faced by the agricultural community, including unreliable internet access, low digital literacy, and linguistic diversity. The system is voice-first and leverages a custom fine-tuned **Gemma 3n model** with a **Retrieval-Augmented Generation (RAG)** engine to provide accurate, real-time, and context-aware advice.
 
-Currently, two official plugins are available:
+The solution is designed to be highly accessible and trustworthy. It combines a human-in-the-loop (HITL) approach with Explainable AI (XAI) principles to ensure the advice is not only correct but also easy for farmers to understand and trust.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+Our application provides a suite of tools to help farmers and other agricultural stakeholders make informed decisions:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * **Dashboard:** A quick-glance dashboard offering essential information, including:
+      * Today's key instructions for farming activities.
+      * Current weather conditions and local forecasts.
+      * A 7-day soil moisture trend for optimal irrigation planning.
+      * Recent alerts triggered by the AI, such as pest or weather warnings.
+  * **Pest Detection:** Users can upload a crop image for analysis. The AI identifies potential pests and provides recommended interventions.
+  * **Soil Analysis:** Upload an image of your soil to receive a detailed analysis of its health and nutrient composition.
+  * **Irrigation Analysis:** Get AI-driven insights on your irrigation needs by uploading an image related to your watering system.
+  * **Weather:** A dedicated section for a comprehensive weather report, including an hourly forecast and a daily farmer's advisory.
+  * **Notifications & AI Chatbot:** Receive automated alerts for critical events (e.g., rain, pest activity). Our integrated chatbot allows for live interaction and provides instant, personalized insights powered by the fine-tuned Gemma 3n model.
 
+## 🧑‍💻 Technical Stack
 
-// For to run Frontend
+  * **Frontend:** **React.js** with **Vite** and **Tailwind CSS**.
+  * **Backend:** A **Flask** server running on **Python 3.10** with **SQLite** for the database.
+  * **AI/ML:** The core of our system is a **fine-tuned Gemma 3n model** and a custom **RAG engine**. This engine fetches real-time data from various public sources, including government APIs and agricultural databases, to provide grounded, hallucination-free responses.
 
-First, make sure you have Node.js and Git installed on your computer.
+## ⚙️ How to Run Locally
 
-Step 1: Clone the Repository
-This command downloads a copy of your project from GitHub to your computer.
-Open your terminal.
-Navigate to the folder where you want to store the project (like your Deskop).
-Run the following command:
+Follow these steps to get the project running on your local machine. You will need **Git**, **Node.js**, and **Python 3.10** installed.
 
-git clone https://github.com/Knight-coderr1999/AgriAssistAI.git
+### Step 1: Clone the Repository
 
-Step 2: Go into the Project Folder
-After the download is complete, you need to move into the project's directory.
+Open your terminal and clone the repository:
 
-cd AgriAssistAI
-
-Step 3: Install Dependencies
-This command reads the package.json file and installs all the necessary packages (like React, Tailwind CSS, etc.) that your project needs to run.
-
-npm install
-
-Step 4: Run the Application
-This is the final step. It starts the local development server.
-
-npm run dev
-
-Your terminal will show you a local URL, which is usually http://localhost:5173. Open this link in your web browser, and you will see your running application.
-
-
-## Key Challenges in Indian Agriculture & AgriAssist AI Solutions
-
-| Specific Challenge | Corresponding AgriAssist AI Solution Feature |
-|--------------------|----------------------------------------------|
-| Climate Change & Variability | Dynamic, goal-driven Crop Health & Soil Agents adapting to real-time weather and crop conditions |
-| Low Productivity & Inefficient Practices | Precision agriculture recommendations (VRT, optimal planting) from Crop & Soil Agents |
-| Insect & Disease Infestations | AI-driven pest surveillance and targeted intervention advice from Crop Health Agent |
-| Limited Land Holdings & Diverse Soil Types | Context-aware, localized advice from Soil & Water Management Agent; fine-tuning on regional data |
-| Market Price Instability & Weak Infrastructure | Real-time market & financial insights from Market Agent; hybrid online-offline architecture |
-| Post-Harvest Losses | Predictive analytics for optimal harvest/sale timing from Market Agent |
-| Low Digital Literacy | Voice-first, intuitive Multilingual Voice Interface |
-| Language Barriers & Code-Switching | Multilingual ASR/TTS, fine-tuned LLMs on synthetic Indian language datasets, code-switching handling |
-| Unreliable Internet Connectivity | Hybrid online-offline architecture with on-device LLM inference and local data caching |
-| Lack of Timely & Accurate Information | Comprehensive data integration, RAG-grounded LLMs, continuous knowledge updates |
-| Farmer Unwillingness & Trust Deficit | Human-in-the-Loop (HITL) validation, Explainable AI (XAI) for transparency |
-| High Implementation Costs & Affordability | Leveraging open-source frameworks, lightweight on-device models, and cost-efficient offline operation |
-
----
-
-## Core Data Sources for AgriAssist AI
-
-| Data Category | Key Data Sources | Type of Data | Access Method/Format |
-|---------------|------------------|--------------|----------------------|
-| Weather | Indian Meteorological Department (IMD), data.gov.in, IMDLIB | Gridded rainfall, temperature series, cyclone frequency, historical & real-time weather data | API, Downloadable CSV/NetCDF/GeoTIFF, Python Library |
-| Crop & Yield | UPAg (Unified Portal for Agricultural Statistics), DES, IFPRI | Production estimates (foodgrain, rice, wheat, etc.), area, yield, climate impact on yields | Downloadable Reports/PDFs, Dataverse (IFPRI), Website Statistics |
-| Soil Health | Soil Health Card Portal, NRSC (Bhuvan-Indian Soil datasets) | Soil testing results, nutrient analysis, soil properties (depth, texture, carbon maps) | Website Dashboards, Downloadable Maps/Data |
-| Pest & Disease | ICAR-CRIDA Crop-Pest-Disease-Weather Database, Kaggle, NCIPM | Weekly pest records, disease information, pest images, IPM packages | Downloadable Excel/PDF, Image Datasets, Website Information |
-| Finance & Policy | UPAg, DES, IFPRI | Market trends, pricing (MSP, farm harvest prices), cost of cultivation, agricultural wages, economic indicators, household consumption | Downloadable Reports/PDFs, Dataverse (IFPRI), Website Statistics |
-| Multilingual Text | Vikaspedia (Govt of India) | Agriculture-specific documents for synthetic QA pair generation | Web Scraping, LLM-generated datasets |
-
-## Quick links
-- Initial synopsis: `docs/synopsis_initial.pdf`
-- Final synopsis: `docs/synopsis_final.pdf`
-- Demo video: `demo/demo_recording.mp4` (or link)
-
-## Install (dev)
 ```bash
-git clone <repo>
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+git clone https://github.com/Knight-coderr1999/AgriAssistAI.git
+cd AgriAssistAI
+```
 
+-----
 
+### Step 2: Run the Backend (API)
 
+The backend server will run on port **4000**.
 
+1.  Navigate to the `api` directory:
+    ```bash
+    cd api
+    ```
+2.  Install the required Python libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Start the Flask server:
+    ```bash
+    python app.py
+    ```
+    The API is now live at `http://localhost:4000`.
+
+-----
+
+### Step 3: Run the Frontend (FE)
+
+The frontend server will run on port **3000**.
+
+1.  Navigate back to the project root and then into the `fe` directory:
+    ```bash
+    cd ../fe
+    ```
+2.  Install the JavaScript dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+    Your application will be available at `http://localhost:3000`. Open this URL in your web browser.
+
+-----
+
+## 🎯 Future Plans (TODOs)
+
+Our vision for AgriAssist AI extends beyond this initial implementation:
+
+  * **Edge Device Deployment:** We aim to deploy our fine-tuned Gemma 3n model directly onto edge devices. This will enable real-time analysis and advice even in areas with zero internet connectivity, a critical step toward serving the most remote communities.
+  * **Voice-First Interface:** A key part of our vision is to fully implement a seamless voice-first interface, making the app even more accessible to users with low digital literacy.
+
+-----
+
+**Initial Synopsis:** [`docs/synopsis_initial.pdf`](https://www.google.com/search?q=docs/synopsis_initial.pdf)
+**Final Synopsis:** [`docs/synopsis_final.pdf`](https://www.google.com/search?q=docs/synopsis_final.pdf)
+**Demo Video:** [`demo/demo_recording.mp4`](https://www.google.com/search?q=demo/demo_recording.mp4)
